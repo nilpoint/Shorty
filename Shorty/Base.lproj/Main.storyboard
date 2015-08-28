@@ -53,9 +53,11 @@
                                             <action selector="shortenURL:" destination="BYZ-38-t0r" id="uCf-AU-2zb"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="A1s-q5-UeX"/>
                                     <barButtonItem title="Tap arrow to shorten" style="plain" id="Wtz-b3-PEr">
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="4NR-nR-GMA"/>
                                     <barButtonItem enabled="NO" title="Copy" id="usd-29-KYn">
                                         <connections>
                                             <action selector="clipboardURL:" destination="BYZ-38-t0r" id="9Mb-lZ-hom"/>
