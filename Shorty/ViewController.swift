@@ -58,6 +58,12 @@ class ViewController: UIViewController, UIWebViewDelegate, NSURLConnectionDelega
     }
   }
   
+  @IBAction func clipboardURL(AnyObject) {
+    let shortURLString = shortLabel.title
+    let shortURL = NSURL(string: shortURLString!)
+    UIPasteboard.generalPasteboard().URL = shortURL
+  }
+  
   // NSURLConnectionDelegate methods
   func connection(connection: NSURLConnection, didFailWithError error: NSError) {
     shortLabel.title = "failed"

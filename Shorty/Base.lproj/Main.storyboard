@@ -56,7 +56,11 @@
                                     <barButtonItem title="Tap arrow to shorten" style="plain" id="Wtz-b3-PEr">
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </barButtonItem>
-                                    <barButtonItem enabled="NO" title="Copy" id="usd-29-KYn"/>
+                                    <barButtonItem enabled="NO" title="Copy" id="usd-29-KYn">
+                                        <connections>
+                                            <action selector="clipboardURL:" destination="BYZ-38-t0r" id="9Mb-lZ-hom"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
