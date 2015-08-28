@@ -21,7 +21,7 @@
                                 <items>
                                     <navigationItem id="g03-OC-4ST">
                                         <nil key="title"/>
-                                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://" borderStyle="roundedRect" placeholder="http://" minimumFontSize="17" clearButtonMode="whileEditing" id="75e-M3-WFv">
+                                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://www.apple.com" borderStyle="roundedRect" placeholder="http://" minimumFontSize="17" clearButtonMode="whileEditing" id="75e-M3-WFv">
                                             <rect key="frame" x="49" y="7" width="500" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -39,22 +39,45 @@
                                 </items>
                             </navigationBar>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Exm-GX-2lm">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="FJM-0i-09R"/>
+                                </connections>
                             </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2u-7n-Dbc">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem enabled="NO" systemItem="play" id="PLD-ko-EeJ">
+                                        <connections>
+                                            <action selector="shortenURL:" destination="BYZ-38-t0r" id="uCf-AU-2zb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Tap arrow to shorten" style="plain" id="Wtz-b3-PEr">
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem enabled="NO" title="Copy" id="usd-29-KYn"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="M2u-7n-Dbc" firstAttribute="leading" secondItem="Exm-GX-2lm" secondAttribute="leading" id="7Qa-9I-R75"/>
                             <constraint firstItem="Exm-GX-2lm" firstAttribute="trailing" secondItem="e86-Ja-SDG" secondAttribute="trailing" id="8Y5-NH-ZWa"/>
                             <constraint firstItem="Exm-GX-2lm" firstAttribute="top" secondItem="e86-Ja-SDG" secondAttribute="bottom" id="930-us-BQ6"/>
+                            <constraint firstItem="M2u-7n-Dbc" firstAttribute="top" secondItem="Exm-GX-2lm" secondAttribute="bottom" id="9Qi-gk-PNj"/>
+                            <constraint firstItem="M2u-7n-Dbc" firstAttribute="trailing" secondItem="Exm-GX-2lm" secondAttribute="trailing" id="DM8-WI-Whc"/>
                             <constraint firstAttribute="trailing" secondItem="e86-Ja-SDG" secondAttribute="trailing" id="Hdt-zg-dSl"/>
-                            <constraint firstItem="Exm-GX-2lm" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="fFc-EX-1R9"/>
+                            <constraint firstItem="M2u-7n-Dbc" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="S7B-iH-VrD"/>
                             <constraint firstItem="e86-Ja-SDG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="n4a-e9-sdw"/>
                             <constraint firstItem="Exm-GX-2lm" firstAttribute="leading" secondItem="e86-Ja-SDG" secondAttribute="leading" id="qG6-F5-xbz"/>
                             <constraint firstItem="e86-Ja-SDG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="z8R-Xi-aI5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="clipboardButton" destination="usd-29-KYn" id="7V0-6j-8iw"/>
+                        <outlet property="shortLabel" destination="Wtz-b3-PEr" id="KQi-Uh-LMe"/>
+                        <outlet property="shortenButton" destination="PLD-ko-EeJ" id="D3x-Iu-dIf"/>
                         <outlet property="urlField" destination="75e-M3-WFv" id="EFp-EC-hI2"/>
                         <outlet property="webView" destination="Exm-GX-2lm" id="PcH-Mn-bNh"/>
                     </connections>
