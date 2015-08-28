@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+  @IBOutlet var urlField: UITextField!
+  @IBOutlet var webView: UIWebView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,6 +22,18 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
-
+  @IBAction func loadLocation(AnyObject) {
+    var urlText = urlField.text
+    
+    if !urlText.hasPrefix("http:") && !urlText.hasPrefix("https:") {
+      if !urlText.hasPrefix("//") {
+        urlText = "//" + urlText
+      }
+      urlText = "http:" + urlText
+    }
+    
+    let url = NSURL(string: urlText)
+    webView.loadRequest(NSURLRequest(URL: url!))
+  }
 }
 

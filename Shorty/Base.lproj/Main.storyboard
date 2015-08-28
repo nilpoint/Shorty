@@ -26,12 +26,19 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="go"/>
+                                            <connections>
+                                                <action selector="loadLocation:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Cen-AG-eiz"/>
+                                            </connections>
                                         </textField>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Mg3-Kq-42c"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Mg3-Kq-42c">
+                                            <connections>
+                                                <action selector="loadLocation:" destination="BYZ-38-t0r" id="XnV-s7-3sw"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Exm-GX-2lm">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Exm-GX-2lm">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
@@ -47,6 +54,10 @@
                             <constraint firstItem="e86-Ja-SDG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="z8R-Xi-aI5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="urlField" destination="75e-M3-WFv" id="EFp-EC-hI2"/>
+                        <outlet property="webView" destination="Exm-GX-2lm" id="PcH-Mn-bNh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
